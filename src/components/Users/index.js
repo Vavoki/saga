@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import User from '../../components/User'
 
-export default class TodoList extends Component {
+export default class UserList extends Component {
     componentDidMount() {
         this.props.getUsers()
         console.log(this.props.getUsers());
@@ -12,7 +12,7 @@ export default class TodoList extends Component {
         return (
             <div>
               <table>
-                {this.props.users.map(todo => <User key={todo.id} {...todo} /> )}
+                {this.props.users.map(user => <User key={user.id} {...user} /> )}
               </table>
             </div>
         )

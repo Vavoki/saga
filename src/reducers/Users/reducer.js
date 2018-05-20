@@ -2,7 +2,15 @@ import { handleActions } from 'redux-actions'
 import * as actions from '../../actions/actions'
 
 const initialState = {
-    users: [],
+    users: [  {
+      id: 0,
+      firstName: "suit",
+      lastName: "meeting",
+      age: 25,
+      visits: 71,
+      progress: 28,
+      status: "complicated"
+    }],
 }
 
 const reducer = handleActions({
