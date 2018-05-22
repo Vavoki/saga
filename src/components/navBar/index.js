@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
-import {BrowserRouter, Route, Link, Switch} from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import './style.css'
 export default class User extends Component {
   render () {
 
     return (
-      <div>
+      <div className='navBar'>
         <nav>
           <ul>
-            <li><Link to='/users'>Users</Link></li>
+            <li><Link to='/users' ><span className='badge badge-pill badge-dark text-uppercase'>Users</span></Link></li>
           </ul>
         </nav>
       </div>

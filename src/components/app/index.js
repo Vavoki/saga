@@ -3,10 +3,10 @@ import React from 'react'
 import {BrowserRouter, Route, Link, Switch} from 'react-router-dom'
 import  NavBar from  '../navBar'
 import  Table from  '../Table'
-
+import './style.css'
 export default function App() {
     return (
-        <div>
+        <div className='app'>
           <NavBar />
           <Table />
         </div>

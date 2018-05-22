@@ -7,6 +7,7 @@ import { getUsers } from '../../actions/actions'
 const mapStateToProps = (state) => {
   return {
     users: selectUsers(state),
+    onLoad: state.userList.onLoad
   }
 }
 
