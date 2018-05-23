@@ -13,7 +13,7 @@ export default class UserList extends Component {
         return <div className="spinner"><i className="fas fa-spinner spinner-icon"></i></div>
       }
         return (
-            <div>
+            <div className="content-form">
 
               <Btn/>
               <Modal />

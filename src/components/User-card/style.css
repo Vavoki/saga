@@ -1,0 +1,16 @@
+.btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 5px;
+}
+.text-white {
+  padding: 5px;
+  border-bottom: 1px solid #fff;
+}
+.text-white span:first-child {
+  margin-right: 5px;
+  text-transform: uppercase;
+}
+.user-wrapper {
+
+}

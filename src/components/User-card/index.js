@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom'
+import './style.css'
  class User extends Component {
 
    componentDidMount(){
@@ -21,14 +22,16 @@ import {withRouter} from 'react-router-dom'
     const {visits} = this.props.user
     const {progress} = this.props.user
     return (
-      <div>
+      <div className='user-wrapper'>
         <div className="text-white"><span>id:</span><span >{id}</span></div>
         <div className="text-white"><span>Name:</span><span>{firstName} {lastName}</span></div>
         <div className="text-white"><span>status:</span><span> {status}</span></div>
         <div className="text-white"><span>visits:</span><span> {visits}</span></div>
         <div className="text-white"><span>progress:</span><span> {progress}</span></div>
-        <button className="btn btn-light" onClick={this.onClickDelete}>Delete</button>
-        <button className="btn btn-light" >Edite</button>
+        <div className="btn-wrapper">
+          <button className="btn btn-light" onClick={this.onClickDelete}>Delete</button>
+          <button className="btn btn-light" >Edit</button>
+        </div>
       </div>
     )
   }

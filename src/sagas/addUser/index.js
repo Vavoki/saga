@@ -1,4 +1,4 @@
-import { fork, takeEvery, call, put, select } from 'redux-saga/effects'
+import { fork, takeEvery, call, put} from 'redux-saga/effects'
 
 import { setUser, handleSubmit } from '../../actions/actions'
 import { postUser } from '../../api'

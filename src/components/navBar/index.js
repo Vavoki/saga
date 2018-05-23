@@ -7,7 +7,7 @@ export default class User extends Component {
     return (
       <div className='navBar'>
         <nav>
-          <ul>
+          <ul className='navigation'>
             <li><Link to='/users' ><span className='badge badge-pill badge-dark text-uppercase'>Users</span></Link></li>
           </ul>
         </nav>

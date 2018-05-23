@@ -1,4 +1,4 @@
-import { fork, takeEvery, call, put, select } from 'redux-saga/effects'
+import { fork, takeEvery, call, put } from 'redux-saga/effects'
 
 import { deleteUser, handleDelete } from '../../actions/actions'
 import { deleteUser as deleteTodoApi } from '../../api'

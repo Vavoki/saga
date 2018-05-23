@@ -1,5 +1,5 @@
 import { fork, takeEvery, call, put } from 'redux-saga/effects'
-import { findUser, giveUser } from '../../actions/actions'
+import { giveUser } from '../../actions/actions'
 import { getUser } from '../../api'
 
 export default function * findUserSaga() {

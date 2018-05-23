@@ -20,22 +20,31 @@ export default class Modal extends Component{
   };
 
   render() {
-    console.log(this.props)
     if (this.props.show) {
       return (
         <div className="overlay">
           <div className="my-modal">
             <div className="my-modal-header">
-              <h4>New user</h4>
-              <span onClick={this.props.toggleModal}>close</span>
+              <h4 className="font-weight-bold">New user</h4>
+              <span onClick={this.props.toggleModal}><i className="fas fa-times"></i></span>
             </div>
             <div className="modal-body">
               <form className="addForm" onSubmit={this.onSubmitForm}>
-                <input type="text" placeholder="Name" ref={node => this.nameInput = node}/>
-                <input type="text" placeholder="Surname" ref={node => this.surnameInput = node}/>
-                <input type="text" placeholder="Age" ref={node => this.ageInput = node}/>
-                <input type="text" placeholder="Status" ref={node => this.statusInput = node}/>
-                <button className="btn-default">OK</button>
+                <div className="form-row">
+                  <div className="col">
+                    <input type="text" className="form-control" placeholder="First name" ref={node => this.nameInput = node} />
+                  </div>
+                  <div className="col">
+                    <input type="text" className="form-control" placeholder="Last name" ref={node => this.surnameInput = node} />
+                  </div>
+                </div>
+                <input type="text" className="form-control" placeholder="Age" ref={node => this.ageInput = node} />
+                <select className="form-control" ref={node => this.statusInput = node}>
+                  <option>relationship</option>
+                  <option>single</option>
+                  <option>complicated</option>
+                </select>
+                <button className="btn-default btn btn-dark">OK</button>
               </form>
             </div>
           </div>
