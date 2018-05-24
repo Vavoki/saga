@@ -14,6 +14,6 @@ function * getUsersWatcher() {
 
 function * getUsersWorker() {
     const users = yield call(getUsers)
-    yield delay(2000)
+    yield delay(1000)
     yield put(setUsers(users))
 }

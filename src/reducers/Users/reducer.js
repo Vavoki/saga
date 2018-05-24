@@ -14,13 +14,20 @@ const reducer = handleActions({
         ...state, users: action.payload, onLoad: false
     }),
 
-    [actions.updateUser]: (state, { payload: updateUser }) => ({
+    [actions.updateUser]: (state, { payload }) => {
+      const newState = state.users;
+      for(let i=0; i<newState.length; i++) {
+        if (newState[i].id === payload.id) {
+          newState[i] = payload;
+        }
+      }
+      return{
         ...state,
-        users: state.users.map(user => user.id === updateUser.id ? updateUser : user)
-    }),
+        users: newState,
+    }},
     [actions.deleteUser]: (state, {payload: id }) => ({
       ...state,
-      users: state.users.filter(user => user.id !== id)
+        users: state.users.filter(user => user.id !== id)
     }),
     [toggleModal]: (state) => ({
     ...state, show: !state.show

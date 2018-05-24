@@ -21,5 +21,6 @@ function * userAddWorker({ payload }) {
     progress,
     status,
   });
+  debugger;
   yield put(setUser(user));
 }

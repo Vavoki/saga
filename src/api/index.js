@@ -11,3 +11,10 @@ export const postUser = (user) => api.post('users', {
     'Content-Type': 'application/json'
   },
 })
+export const updateUser = (user) => api.put(`users/${user.id}`, {
+  body: JSON.stringify(user),
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+})
