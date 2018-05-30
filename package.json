@@ -13,6 +13,7 @@
   "dependencies": {
     "babel-eslint": "^8.2.3",
     "bootstrap": "^4.1.1",
+    "identity-obj-proxy": "^3.0.0",
     "json-server": "^0.12.2",
     "material-ui": "^1.0.0-beta.44",
     "ramda": "^0.25.0",
@@ -32,19 +33,37 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "jest",
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.js*",
     "server": "json-server --watch db.json --port 3001",
     "generate-users": "node generateUsers"
   },
   "devDependencies": {
+    "babel-jest": "^23.0.1",
+    "babel-plugin-transform-export-extensions": "^6.22.0",
+    "babel-preset-airbnb": "^2.4.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1",
     "commander": "^2.15.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
-    "namor": "^1.0.1"
+    "jest": "^23.0.1",
+    "namor": "^1.0.1",
+    "react-addons-test-utils": "^15.6.2"
+  },
+  "presets": [
+    "stage-0"
+  ],
+  "jest":{
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+    }
   }
 }

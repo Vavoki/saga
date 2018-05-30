@@ -14,7 +14,6 @@ export default class UserList extends Component {
       }
         return (
             <div className="content-form">
-
               <Btn/>
               <Modal />
               <table className="table table-dark">
