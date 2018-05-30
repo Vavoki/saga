@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {withRouter} from 'react-router-dom'
 import './style.css'
 import  Form from '../../containers/editForm/index'
- class User extends Component {
+export class User extends Component {
   constructor() {
     super()
     this.state  = {
@@ -14,11 +14,11 @@ import  Form from '../../containers/editForm/index'
       this.props.findUser(this.id)
    }
 
-   onClickDelete = () => {
+   onClickDelete ()  {
      this.props.handleDelete(this.props.user.id);
      this.props.history.goBack();
   }
-   onClickEdit = () => {
+   onClickEdit  ()  {
      this.setState({edit:true});
    }
   render() {
@@ -31,14 +31,15 @@ import  Form from '../../containers/editForm/index'
     if(!this.state.edit) {
       return (
         <div className='user-wrapper'>
+          <h1>User</h1>
           <div className="text-white"><span>id:</span><span>{id}</span></div>
           <div className="text-white"><span>Name:</span><span>{firstName} {lastName}</span></div>
           <div className="text-white"><span>status:</span><span> {status}</span></div>
           <div className="text-white"><span>visits:</span><span> {visits}</span></div>
           <div className="text-white"><span>progress:</span><span> {progress}</span></div>
           <div className="btn-wrapper">
-            <button className="btn btn-light" onClick={this.onClickDelete}>Delete</button>
-            <button className="btn btn-light" onClick={this.onClickEdit}>Edit</button>
+            <button className="btn btn-light deleteBtn" onClick={this.onClickDelete.bind(this)}>Delete</button>
+            <button className="btn btn-light editeBtn" onClick={this.onClickEdit.bind(this)}>Edit</button>
           </div>
         </div>
       )
